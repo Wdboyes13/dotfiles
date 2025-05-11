@@ -55,3 +55,4 @@ export PATH="$HOMEBREW_PREFIX/bin:$PATH"/Users/william/dotfiles:$PATH
 export PATH="/Users/william/dotfiles:$PATH"
 alias emptytrash="rm -rf ~/.Trash/*"
 alias drugs="echo "Drugs""
+alias drugs="echo Drugs"
