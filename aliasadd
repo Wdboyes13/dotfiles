@@ -4,7 +4,7 @@ currDir=$PWD
 cd ~/dotfiles
 
 # Add alias to zshrc (user adds quotes if arguments are needed)
-echo "alias $1=$2" >> zshrc
+echo "alias $1=\"$2\"" >> zshrc
 git add .
 git commit -m "Added alias: $1"
 git push origin main
