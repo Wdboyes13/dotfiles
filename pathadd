@@ -1,0 +1,12 @@
+# ~/dotfiles/pathadd
+#!/bin/zsh
+
+currDir=$PWD
+cd ~/dotfiles
+
+echo "$1:\$PATH" >> zshrc
+git add zshrc
+git commit -m "Updated ZSHRC"
+git push origin main
+
+cd "$currDir"
