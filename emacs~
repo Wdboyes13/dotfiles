@@ -1,0 +1,36 @@
+;; MELPA setup
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
+
+;; Install lsp-mode if not already installed
+(unless (package-installed-p 'lsp-mode)
+  (package-refresh-contents)
+  (package-install 'lsp-mode))
+
+;; Install company-mode for auto-completion (optional but useful)
+(unless (package-installed-p 'company)
+  (package-refresh-contents)
+  (package-install 'company))
+
+;; Install lsp-ui for additional UI features like hover, signature help, etc. (optional)
+(unless (package-installed-p 'lsp-ui)
+  (package-refresh-contents)
+  (package-install 'lsp-ui))
+
+;; Enable LSP mode for C/C++ and Java
+(require 'lsp-mode)
+(add-hook 'c++-mode-hook #'lsp)
+(add-hook 'c-mode-hook #'lsp)
+(add-hook 'java-mode-hook #'lsp)
+
+;; Optionally enable company mode for completion
+(add-hook 'lsp-mode-hook 'company-mode)
+
+;; (Optional) Configure LSP for C/C++ with clangd and Java with jdtls
+;; Example configuration for C/C++
+(setq lsp-clients-clangd-executable "clangd")
+
+;; Example configuration for Java (if using jdtls)
+(setq lsp-java-java-path "/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home") ;; Adjust the path to your JDK
+(setq lsp-java-server-install-dir "/opt/homebrew/Cellar/jdtls/1.46.1/bin/jdtls") ;; Adjust the path to your jdtls

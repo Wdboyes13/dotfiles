@@ -53,4 +53,4 @@ export PATH="/opt/homebrew/opt/libpcap/bin:$PATH"
 export PATH="/Applications/IntelliJ IDEA CE.app/Contents/MacOS:$PATH"
 export PATH="$HOMEBREW_PREFIX/bin:$PATH"/Users/william/dotfiles:$PATH
 export PATH="/Users/william/dotfiles:$PATH"
-export PATH=":$PATH"
+alias emptytrash=rm -rf ~/.Trash/*

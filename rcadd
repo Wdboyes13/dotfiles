@@ -1,0 +1,14 @@
+#!/bin/zsh
+
+currDir=$PWD
+cd ~/dotfiles
+
+# Add the new config line to zshrc
+echo "$1" >> zshrc
+git add .
+git commit -m "Added config: $1"
+git push origin main
+
+source ~/.zshrc  # Apply changes immediately
+
+cd "$currDir"

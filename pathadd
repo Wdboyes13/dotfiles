@@ -4,9 +4,12 @@
 currDir=$PWD
 cd ~/dotfiles
 
-echo "$1:\$PATH" >> zshrc
-git add zshrc
+echo "export PATH=\"$1:\$PATH\"" >> zshrc
+echo "Added $1 to PATH"
+git add .
 git commit -m "Updated ZSHRC"
 git push origin main
+
+source ~/.zshrc
 
 cd "$currDir"
